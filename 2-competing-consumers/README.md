@@ -40,17 +40,17 @@ thì mỗi consumer chỉ đồng thời xử lý tối đa 1 message, nên có 
 
 consumer1
 
-![alt text](image.png)
+![alt text](./images/image.png)
 
 consumer2
 
-![alt text](image-1.png)
+![alt text](./images/image-1.png)
 
 Nếu không thiết lập channel.basic_qos(prefetch_count=1) sẽ mặc định là round robin và phải chờ xử lý xong
 
 consumer1
 
-![alt text](image-2.png)
+![alt text](./images/image-2.png)
 
 consumer2
-![alt text](image-3.png)
+![alt text](./images/image-3.png)
