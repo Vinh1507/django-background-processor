@@ -55,3 +55,6 @@ consumer1
 consumer2
 
 ![alt text](./images/image-3.png)
+
+
+### Chú ý không thiết lập exclusive = True khi chạy nhiều instance của consumer.py
