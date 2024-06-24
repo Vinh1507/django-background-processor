@@ -17,7 +17,7 @@ channel = connection.channel()
 
 channel.queue_declare(queue='letterbox')
 
-# channel.basic_qos(prefetch_count=1)
+channel.basic_qos(prefetch_count=1)
 
 channel.basic_consume(queue='letterbox', on_message_callback=on_message_received)
 
