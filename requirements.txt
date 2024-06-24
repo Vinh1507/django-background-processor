@@ -1,0 +1,5 @@
+dramatiq
+dramatiq[rabbitmq]
+apscheduler
+requests
+tabulate
