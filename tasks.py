@@ -1,13 +1,12 @@
 import dramatiq
 from dramatiq.brokers.rabbitmq import RabbitmqBroker
-import requests  # Import requests library for making HTTP requests
+import requests
 from tabulate import tabulate
 
 # Ensure the broker is set up in this file
 rabbitmq_broker = RabbitmqBroker(url="amqp://guest:guest@rabbitmq:5672/")
 dramatiq.set_broker(rabbitmq_broker)
 
-# Define the API URL you want to call
 API_URL = "http://192.168.144.143:30002/api/students/?query="
 
 @dramatiq.actor
