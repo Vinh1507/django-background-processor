@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    image: "rabbitmq:3.9-management"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  app:
+    container_name: simple-app
+    build: .
+    command: ["sh", "-c", "while ! nc -z rabbitmq 5672; do sleep 1; done; python producer.py"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy

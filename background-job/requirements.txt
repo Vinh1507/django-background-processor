@@ -3,3 +3,4 @@ dramatiq[rabbitmq]
 apscheduler
 requests
 tabulate
+pika

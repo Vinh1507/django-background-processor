@@ -92,10 +92,10 @@ Remember a subscription work like a Queue
 - uses amqp as its default messaging protocol
 
 Exchanges và Queues
-![alt text](image.png)
+![alt text](./images/exchange-1.png)
 
 Consumer có thể listen nhiều queue khác nhau hoặc không queue nào
-![alt text](image-1.png)
+![alt text](./images/exchange-2.png)
 
 Connection và Channel
 
@@ -103,6 +103,42 @@ Connection và Channel
 
 Bằng cách sử dụng nhiều channel thay vì nhiều connection, chúng ta có thể tiết kiệm được nhiều tài nguyên, tương tự với việc consumer có 1 connection nhưng có nhiều channels
 
+## AMQP (The advanced message queuing protocol)
+
+amqp uses a remote procedure call pattern to allow one computer for example client to execute programs or method on another computer, 
+
+This communication is two-way and both the broker and the client can use or pc to run programs or call methods on each other
+
+## Competing consumers
+
+Sử dụng để phân bổ các công việc tốn thời gian giữa nhiều workers, vì vậy ý tưởng chính là đang có 1 task cần nhiều tài nguyên để hoàn thành (xử lý ảnh, machine learning, ...) những task mà phải chờ một thời gian để hoàn thành và không muốn client phải chờ đợi
+
+Do đó, chúng ta đưa những task này vào work queue và các worker cho chạy ở chế độ nền (background) lấy các task ra và hoàn thành chúng
+
+Khá phổ biến trong web/app khi http request thì rất ngắn
+
+Ngoài ra có khả năng scale và tin cậy
+
+Mặc định rabbitmq sử dụng round robin để gửi yêu cầu, trong trường hợp này là khá cân bằng
+![alt text](./images/competing-comsumer.png)
+
+Ở trường hợp này, Nếu sử dụng round robin, khi consumer A mất 15s để hoàn thành, thì sẽ có thời điểm consumer A phải xử lý 2 message cùng lúc, trong khi consumer B thì đang free. Vì mặc định, message queue không quan tâm số lượng unackowleadged messages của 1 consumer 
+
+Để overcome việc này, có thể set the prefetch value của 1 tin nhắn, điều này khiến cho rabbitmq không gửi nhiều hơn 1 message cùng lúc tới 1 worker. Từ đó message thứ 3 sẽ không gửi tới comsumer A mà sẽ dispatch tới consumer B (vì đang free)
+
+Do đó cần setup cẩn thận để không rơi vào tình trạng trên
+![alt text](./images/competing-comsumer-1.png)
+
+Để nhanh hơn có thể thêm các consumer vào queue
+![alt text](./images/competing-comsumer-2.png)
+
+Nếu không may có 1 consumer down, thì vẫn còn 2 consumer khác xử lý, chỉ là sẽ chậm hơn chút (==> tính tin cậy)
+![alt text](./images/competing-comsumer-3.png)
+
+
+Nếu set auto_ack = True, ngay khi lấy một message ra khỏi queue, sẽ tự động gửi acknowleadged và sẽ không cần thủ công gửi nó
+
+Nhưng muốn thủ công gửi khi đã chắc chắn hoàn thành thì set auto_ack = False
 ## Cài đặt rabbitmq, dramatiq, apscheduler (python)
 
 Cấu trúc thư mục:
