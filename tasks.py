@@ -2,10 +2,11 @@ import dramatiq
 from dramatiq.brokers.rabbitmq import RabbitmqBroker
 import requests
 from tabulate import tabulate
+from broker import rabbitmq_broker
 
-# Ensure the broker is set up in this file
-rabbitmq_broker = RabbitmqBroker(url="amqp://guest:guest@rabbitmq:5672/")
-dramatiq.set_broker(rabbitmq_broker)
+# # Ensure the broker is set up in this file
+# rabbitmq_broker = RabbitmqBroker(url="amqp://guest:guest@rabbitmq:5672/")
+# dramatiq.set_broker(rabbitmq_broker)
 
 API_URL = "http://192.168.144.143:30002/api/students/?query="
 

@@ -85,6 +85,23 @@ Khi app 2 quay trở lại hoạt động bình thường, message broker sẽ g
 Remember a subscription work like a Queue
 ![alt text](<./images/image-8.png>)
 
+# RabbitMQ
+
+- asynchronously (do not follow the simple request-reply pattern, where we have to wait on replies)
+- allows us to achieve great scale and reliability
+- uses amqp as its default messaging protocol
+
+Exchanges và Queues
+![alt text](image.png)
+
+Consumer có thể listen nhiều queue khác nhau hoặc không queue nào
+![alt text](image-1.png)
+
+Connection và Channel
+
+1 connection có thể có nhiều channel, việc có nhiều channel giúp cho viêc có thể tạo và push message vào message broker bằng nhiều threads khác nhau, vì mỗi thread sử dụng 1 channel, do đó chúng cô lập với nhau
+
+Bằng cách sử dụng nhiều channel thay vì nhiều connection, chúng ta có thể tiết kiệm được nhiều tài nguyên, tương tự với việc consumer có 1 connection nhưng có nhiều channels
 
 ## Cài đặt rabbitmq, dramatiq, apscheduler (python)
 
