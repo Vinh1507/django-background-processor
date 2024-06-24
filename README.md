@@ -1,4 +1,4 @@
-# django-background-processor
+# rabbitmq-python
 
 ## Message Broker
 
