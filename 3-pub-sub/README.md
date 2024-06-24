@@ -42,6 +42,7 @@ producer cũng sẽ không quan tâm số lượng consumer đang xử lý, cứ
     + Tạo 1 queue chuyên dụng có exclusive = True, để khi consumer down thì sẽ xóa queue đó đi
     + binding queue vừa tạo vào exchange vừa tạo
     + Nếu không binding queue và exchange là sẽ không nhận được message
+    + Vì exchange sẽ gửi message tới tất cả consumer rảng buộc với nó (bound to the exchange)
     ```
     channel.exchange_declare(exchange='pubsub', exchange_type='fanout')
 
