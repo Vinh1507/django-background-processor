@@ -174,3 +174,7 @@ Truy cập thông qua browswer: (Account: guest/guest)
 Kết quả lấy các đối tượng trong hệ thống (gọi 1 api tới API Service) và hiển thị dạng bảng
 
 ![alt text](./images/object-result.png)
+
+
+## Tài liệu tham chiếu:
+[Youtube - RabbitMQ Tutorial by jumpstartCS](https://www.youtube.com/watch?v=iQ4kENLfaNI&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4IvO&index=2&ab_channel=jumpstartCS)
