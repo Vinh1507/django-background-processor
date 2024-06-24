@@ -40,3 +40,8 @@ Ngoài ra, có thể là `*.europe.*`
 
 Sử dụng hash (#) wildcard trong binding key, hash có thể thay thế cho 0 hoặc nhiều words (không quan tâm những gì đăng sau dấu # - có thể là rỗng, có thể là 1 chấm, 2 chấm, ... bất cứ thứ gì maximum là 255 bytes)
 ![alt text](./images/image-2.png)
+
+
+## Kết quả cài đặt
+![alt text](./images/image-4.png)
+![alt text](./images/image-5.png)
