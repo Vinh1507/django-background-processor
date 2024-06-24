@@ -35,6 +35,7 @@ Sử dụng star (*) wildcard trong binding key, star có thể thay thế cho 1
 ### (chú ý là 1 word)
 
 ![alt text](./images/image-3.png)
+
 Ngoài ra, có thể là `*.europe.*`
 
 

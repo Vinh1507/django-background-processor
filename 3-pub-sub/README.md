@@ -13,6 +13,7 @@ Ví dụ, trong triển khai microservices
 - và producer cũng không muốn gửi trực tiếp tới từng service muốn nhận
 
 Có khá nhiều loại exchange khác nhau
+
 ![alt text](./images/image.png)
 
 Về cơ bản, các exchange đều nhận mesages từ producer và gửi nó vào queue, tùy vào type của exchange mà sẽ gửi tới single queue, multiple queue hoặc discarded message hay không, ...

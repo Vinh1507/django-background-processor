@@ -178,3 +178,4 @@ Kết quả lấy các đối tượng trong hệ thống (gọi 1 api tới API
 
 ## Tài liệu tham chiếu:
 [Youtube - RabbitMQ Tutorial by jumpstartCS](https://www.youtube.com/watch?v=iQ4kENLfaNI&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4IvO&index=2&ab_channel=jumpstartCS)
+[Github - jumpstartCS](https://github.com/delaneybrian/jumpstartCS-rabbitmq-python/tree/master)
