@@ -114,10 +114,10 @@ Do đó trong Dockerfile phải cài thêm netcat-openbsd
 
 ### Kết quả
 Truy cập thông qua browswer: (Account: guest/guest)
-![alt text](r./images/abbitmq-browser.png)
+![alt text](<./images/rabbitmq-browser.png>)
 
 Đang setup lập lịch 20s thực hiện 1 lần 
 
 Kết quả lấy các đối tượng trong hệ thống (gọi 1 api tới API Service) và hiển thị dạng bảng
 
-![alt text](o./images/bject-result.png)
+![alt text](./images/object-result.png)
