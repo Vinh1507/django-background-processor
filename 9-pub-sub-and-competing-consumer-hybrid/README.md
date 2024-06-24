@@ -1,6 +1,6 @@
 # 9. Pub/Sub and Competing consumers hybrid
 
-Mục tiêu: Gửi 1 message tới đồng thời 2 queue khác, trong đó
+Mục tiêu: Gửi 1 message tới đồng thời 2 queue khác nhau, trong đó
 
 - queue thứ 1 ở dạng competing consumer (worker) với 2 instance nhận message từ queue, và 2 consumer có thời gian xử lý message ngẫu nhiên (random thời gian này)
 
@@ -38,6 +38,6 @@ Competing consumer thứ 2: Nhận được các message id là 2, 5, 7, 8
 ![alt text](./images/image-6.png)
 
 ## Chú ý:
-- Đối với single consumer (không competing) thì có thể không cần đặt tên cho queue
+- Đối với single consumer (không competing) thì có thể không cần đặt tên cho queue, để rabbit mq tự random tên
 
 - Nhưng với conpeting consumers thì phải chỉ định rõ ràng tên queue, tránh trường hợp khi chạy 2 instance, rabbitmq tạo random 2 tên queue, không còn là cạnh tranh cùng 1 queue nữa
